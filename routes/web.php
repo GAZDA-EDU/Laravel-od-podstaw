@@ -19,5 +19,13 @@ Route::get('/', function(){
 });
 
 Route::get('/bind', [SiteController::class, 'bind']);
+Route::get('/o-nas', function(){
+    return [
+        'title' => 'O nas'
+    ];
+});
 
+Route::get('/user/{slug}/{action}', function(string $slug, string $action){
+    return "$slug $action";
+});
 
