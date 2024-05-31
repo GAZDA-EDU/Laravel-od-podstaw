@@ -29,3 +29,4 @@ Route::get('/user/{slug}/{action}', function(string $slug, string $action){
     return "$slug $action";
 });
 
+Route::get('/user/{slug}', [SiteController::class, 'user']);
