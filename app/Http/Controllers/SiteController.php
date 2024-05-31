@@ -17,4 +17,11 @@ class SiteController extends Controller
         $action = $request->get('action', 'profile');
         return "Hello! $slug, your action is $action";
     }
+
+    public function request(Request $request)
+    {
+        $name = $request->input('name', 'Marcin');
+
+        return $name;
+    }
 }
