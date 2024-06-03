@@ -27,12 +27,12 @@ class SiteController extends Controller
 
     public function response()
     {
-        return redirect()->route('response.redirect');
+        return redirect()->route('response.redirect', ['reason' => 'auth']);
 
     }
 
-    public function responseRedirect()
+    public function responseRedirect(string $reason)
     {
-        return 'response redirect';
+        return "response redirect, reason <b>$reason</b>";
     }
 }
