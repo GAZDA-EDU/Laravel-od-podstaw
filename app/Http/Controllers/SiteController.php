@@ -27,7 +27,7 @@ class SiteController extends Controller
 
     public function response()
     {
-        return redirect()->action([SiteController::class, 'responseRedirect'], ['reason' => 'auth']);
+        return redirect()->away('http://google.pl/');
 
     }
 
