@@ -27,7 +27,7 @@ class SiteController extends Controller
 
     public function response()
     {
-        return redirect()->away('http://google.pl/');
+        return view('welcome');
 
     }
 
