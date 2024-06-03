@@ -27,7 +27,9 @@ class SiteController extends Controller
 
     public function response()
     {
-        return view('welcome');
+        return response()->json([
+            'name' => 'Marcin'
+        ]);
 
     }
 
