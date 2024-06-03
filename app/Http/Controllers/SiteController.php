@@ -27,17 +27,12 @@ class SiteController extends Controller
 
     public function response()
     {
-        return response('response ok', 200)
-        ->withHeaders([
-            'Laravel-App-version' => app()->version(),
-            'Accept-Language' => 'pl-pl'
-        ])
-        ->cookie('Laravel-App-version', app()->version(), 5);
+        return redirect()->route('response.redirect');
 
     }
 
     public function responseRedirect()
     {
-
+        return 'response redirect';
     }
 }
