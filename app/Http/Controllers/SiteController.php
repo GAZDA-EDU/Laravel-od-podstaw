@@ -24,4 +24,20 @@ class SiteController extends Controller
 
         return $name;
     }
+
+    public function response()
+    {
+        return response('response ok', 200)
+        ->withHeaders([
+            'Laravel-App-version' => app()->version(),
+            'Accept-Language' => 'pl-pl'
+        ])
+        ->cookie('Laravel-App-version', app()->version(), 5);
+
+    }
+
+    public function responseRedirect()
+    {
+
+    }
 }

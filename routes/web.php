@@ -33,3 +33,7 @@ Route::get('/user/{slug}/{action}', function(string $slug, string $action){
 Route::get('/user/{slug}', [SiteController::class, 'user']);
 
 Route::get('/request', [SiteController::class, 'request']);
+
+Route::get('/response', [SiteController::class, 'response'])->name('response');
+
+Route::get('/response/redirect', [SiteController::class, 'responseRedirect'])->name('response.redirect');
