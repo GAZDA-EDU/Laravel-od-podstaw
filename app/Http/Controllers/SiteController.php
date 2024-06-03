@@ -27,7 +27,7 @@ class SiteController extends Controller
 
     public function response()
     {
-        return redirect()->route('response.redirect', ['reason' => 'auth']);
+        return redirect()->action([SiteController::class, 'responseRedirect'], ['reason' => 'auth']);
 
     }
 
