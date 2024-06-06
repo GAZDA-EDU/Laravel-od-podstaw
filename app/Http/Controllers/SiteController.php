@@ -41,7 +41,8 @@ class SiteController extends Controller
 public function view()
 {
     return view('simple-view', [
-        'name' => 'Marcin'
+        'name' => 'Marcin',
+        'number' => mt_rand(1, 10)
     ]);
 }
 }

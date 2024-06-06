@@ -9,4 +9,11 @@
     <p>
         Hello {{ $name }}
     </p>
+
+    @if ($number > 5)
+        <p>Szczęście Ci sprzyja {{ $number }}</p>
+    @else
+        <p>Ale pech {{ $number}} </p>
+    @endif
+
 @endsection
