@@ -16,4 +16,7 @@
         <p>Ale pech {{ $number}} </p>
     @endif
 
+    @for($i = 0; $i < 50; $i++)
+        <p>{{ $i }}</p>
+    @endfor
 @endsection
