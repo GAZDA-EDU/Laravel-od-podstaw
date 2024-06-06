@@ -37,3 +37,5 @@ Route::get('/request', [SiteController::class, 'request']);
 Route::get('/response', [SiteController::class, 'response'])->name('response');
 
 Route::get('/response/redirect/{reason}', [SiteController::class, 'responseRedirect'])->name('response.redirect');
+
+Route::get('/view', [SiteController::class, 'view' ]);

@@ -37,4 +37,11 @@ class SiteController extends Controller
     {
         return "response redirect, reason <b>$reason</b>";
     }
+
+public function view()
+{
+    return view('welcome', [
+        'name' => 'Marcin'
+    ]);
+}
 }
