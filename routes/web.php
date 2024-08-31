@@ -16,7 +16,12 @@ use App\Http\Controllers\SiteController;
 
 Route::get('/', function(){
     return view('welcome');
-});
+})->name('index');
+
+Route::get('/inny-adres', function (){
+    $previous = url()->previous();
+    return "<a href='$previous'>Wróć</a>";
+})->name('index.other');
 
 Route::get('/bind', [SiteController::class, 'bind']);
 

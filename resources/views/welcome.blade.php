@@ -10,6 +10,22 @@
             </div>
         </div>
     </div>
+    <a href="{{ route('index') }}">
+        Strona główna
+    </a><br><br>
+    <a href="{{ route('index.other') }}">
+        Strona inna
+    </a>
+    <p>
+        <a href="">
+            {{ url()->current() }}
+        </a>
+    </p>
+    <p>
+        <a href="url()->full()">
+            {{ url()->full() }}
+        </a>
+    </p>
 </div>
 @endsection
 
