@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
 
@@ -17,6 +17,43 @@ use App\Http\Controllers\SiteController;
 Route::get('/', function(){
     return view('welcome');
 })->name('index');
+
+Route::get('/sesja-1', function(Request $request){
+    return $request->session()->get('username', 'strefakursow-1');
+    //return view('welcome');
+});
+
+Route::get('/sesja-2', function(){
+    session([
+        'username' => 'strefakursow-2-sesja'
+    ]);
+    return session('username', 'strefakursow-2');
+    //return view('welcome');
+});
+
+Route::get('/sesja-all', function(){
+    session([
+        'username' => 'strefakursow-2-sesja'
+    ]);
+    return session()->all();
+    //return view('welcome');
+});
+
+Route::get('/sesja-forget', function(){
+    session()->forget('username');
+
+    if(!session()->has('username')){
+        session(['username' => 'strefa']);
+    }
+    return session()->all();
+    //return view('welcome');
+});
+
+Route::get('/sesja-flush', function(){
+    session()->flush();
+    return session()->all();
+    //return view('welcome');
+});
 
 Route::get('/inny-adres', function (){
     $previous = url()->previous();
