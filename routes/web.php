@@ -3,6 +3,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
 use App\Http\Requests\StoreSiteRequest;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,12 @@ use App\Http\Requests\StoreSiteRequest;
 
 Route::get('/', [SiteController::class, 'index'])->name('index');
 
-Route::get('/', [SiteController::class, 'store'])->name('index.store');
+Route::get('/db-test', function(){
+    DB::connection()->getPdo();
+
+    return true;
+
+});
+
+Route::post('/', [SiteController::class, 'store'])->name('index.store');
 
