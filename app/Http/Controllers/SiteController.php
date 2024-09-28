@@ -3,18 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreSiteRequest;
+use App\Models\User;
 
 class SiteController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        // $allActiveUsers = User::all()->where('active', true);
+        $allActiveUsers = User::where('active', true)->all();
     }
-
-    public function store(StoreSiteRequest $request)
-    {
-        return $request->validated();
-    }
-
 }
