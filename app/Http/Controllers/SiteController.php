@@ -2,47 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Contracts\PaymentGateway;
 use Illuminate\Http\Request;
-// use GuzzleHttp\Psr7\Request;
+use App\Http\Requests\StoreSiteRequest;
 
 class SiteController extends Controller
 {
-    public function bind(PaymentGateway $paymentGateway)
+    public function index()
     {
-        $paymentGateway->pay();
+        return view('welcome');
     }
 
-    public function user(Request $request, string $slug){
-        $action = $request->get('action', 'profile');
-        return "Hello! $slug, your action is $action";
-    }
-
-    public function request(Request $request)
+    public function store(StoreSiteRequest $request)
     {
-        $name = $request->input('name', 'Marcin');
-
-        return $name;
+        return $request->validated();
     }
 
-    public function response()
-    {
-        return response()->json([
-            'name' => 'Marcin'
-        ]);
-
-    }
-
-    public function responseRedirect(string $reason)
-    {
-        return "response redirect, reason <b>$reason</b>";
-    }
-
-public function view()
-{
-    return view('simple-view', [
-        'name' => 'Marcin',
-        'number' => mt_rand(1, 10)
-    ]);
-}
 }

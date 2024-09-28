@@ -6,26 +6,29 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h1>Laravel od podstaw</h1>
-            </div>
+            <form method="POST" action="{{ route('index.store') }}">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
+                    @error('email')
+                        <span>
+                            {{ $message }}
+                        </span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                    @error('password')
+                        <span>
+                            {{ $message }}
+                        </span>
+                    @enderror
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                @csrf
+            </form>
         </div>
     </div>
-    <a href="{{ route('index') }}">
-        Strona główna
-    </a><br><br>
-    <a href="{{ route('index.other') }}">
-        Strona inna
-    </a>
-    <p>
-        <a href="">
-            {{ url()->current() }}
-        </a>
-    </p>
-    <p>
-        <a href="url()->full()">
-            {{ url()->full() }}
-        </a>
-    </p>
 </div>
 @endsection
-
